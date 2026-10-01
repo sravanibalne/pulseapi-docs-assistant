@@ -4,7 +4,7 @@ A conversational AI chatbot that answers developer questions about **PulseAPI** 
 
 ## What This Demonstrates
 
-- **Code-first agent development with LangChain/LangGraph** — a deliberate contrast to the visual/no-code n8n approach used in a separate project ([`support-triage-agent`](https://github.com/sbalne/support-triage-agent))
+- **Code-first agent development with LangChain/LangGraph** — a deliberate contrast to the visual/no-code n8n approach used in a separate project ([`support-triage-agent`](https://github.com/sravanibalne/support-triage-agent))
 - **Real retrieval-augmented generation (RAG)** — documentation is chunked, embedded (OpenAI `text-embedding-3-small`), and stored in a Pinecone vector database. Each user question triggers a fresh semantic similarity search, so only the relevant chunks are sent to the model — not the entire document
 - **Multi-turn conversational memory** using LangGraph's checkpointer-based persistence, working correctly alongside per-message retrieval (verified: the assistant can resolve a contextual follow-up like "is the Go one officially supported?" using prior conversation history, while retrieval independently fetches fresh relevant context for that specific message)
 - **Scoped, boundary-aware prompting** — an assistant that stays strictly within its documentation domain, corrects false premises, and resists prompt injection attempts
